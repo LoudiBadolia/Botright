@@ -17,7 +17,7 @@ class FingerprintGenerator:
             browser (Optional[Literal["chrome", "edge", "firefox", "safari"]]): The web browser to include in the user agent (default is "chrome").
         """
         self.ua = UserAgent(os=[os_system], browsers=[browser], min_percentage=1.5)
-        self.bayesian_network = BayesianNetwork(path=rf"{os.path.dirname(os.path.abspath(__file__))}\fingerprints.json")
+        self.bayesian_network = BayesianNetwork(path=rf"{os.path.dirname(os.path.abspath(__file__))}/fingerprints.json")
 
     def get_fingerprint(self) -> dict:
         """
